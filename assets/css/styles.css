@@ -20,3 +20,86 @@ body {
   background: var(--mainWhite);
   font-family: "Lato", sans-serif;
 }
+
+.navbar-dark {
+  position: sticky;
+  top: 0;
+}
+
+.navbar-brand img{
+    width: 9%;
+    background-color: var(--mainWhite);
+    border: 1px solid var(--primaryColor);
+    border-radius: 50%;
+}
+
+.nav-icon {
+  font-size: 1.5rem;
+}
+.cart-btn {
+  position: relative;
+  cursor: pointer;
+}
+/* .cart-items {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--primaryColor);
+  padding: 0 5px;
+  border-radius: 30%;
+  color: var(--mainWhite);
+} */
+
+.fa-shopping-cart {
+  color: var(--mainWhite);
+}
+
+.badge-light {
+  color: var(--mainWhite);
+  background-color: var(--primaryColor) !important;
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  margin-top: 6px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+/* --------------- Hero ---------------- */
+.hero {
+  min-height: calc(100vh - 60px);
+  background: url('../../assets/images/hero-bcg.jpeg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  display: inline-block;
+  padding: 2rem;
+}
+.banner-title {
+  font-size: 3.4rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  margin-bottom: 3rem;
+}
+.banner-btn {
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  font-size: 1rem;
+  background: var(--primaryColor);
+  color: var(--mainBlack);
+  border: 1px solid var(--primaryColor);
+  transition: var(--mainTransition);
+  cursor: pointer;
+}
+.banner-btn:hover {
+  background: transparent;
+  color: var(--primaryColor);
+}
+/* --------------- End of Hero ---------------- */
