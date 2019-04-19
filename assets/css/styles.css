@@ -7,6 +7,7 @@
   --mainGrey: #ececec;
   --mainSpacing: 0.1rem;
   --mainTransition: all 0.3s linear;
+  --mainBgNavBar: #b36925de;
 }
 
 * {
@@ -25,10 +26,15 @@ body {
   position: sticky;
   top: 0;
   z-index: 9999;
+  padding: 5px 55px;
+}
+
+.bg-dark {
+  background-color: var(--mainBgNavBar) !important;
 }
 
 .navbar-brand img{
-    width: 9%;
+    width: 12%;
     background-color: var(--mainWhite);
     border: 1px solid var(--primaryColor);
     border-radius: 50%;
