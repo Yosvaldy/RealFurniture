@@ -25,7 +25,7 @@ body {
 .navbar-dark {
   position: sticky;
   top: 0;
-  z-index: 9999;
+  z-index: 1;
   padding: 5px 55px;
 }
 
@@ -58,7 +58,12 @@ body {
 } */
 
 .fa-shopping-cart {
+  cursor: pointer;
+}
+
+.bag-btn:hover .fa-shopping-cart {
   color: var(--mainWhite);
+  transition: var(--mainTransition);
 }
 
 .badge-light {
