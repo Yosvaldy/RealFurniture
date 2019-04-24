@@ -8,7 +8,11 @@ const cartItems = document.querySelector('.cart-btn .cart-items');
 const cartTotal = document.querySelector('.cart-total');
 const cartContent = document.querySelector('.cart-content');
 const productsDOM = document.querySelector('.products-center');
+const cartTitle = document.querySelector('.cart-title');
+console.log(cartTitle);
 
+
+const body = $(document.body);
 //cart
 let cart = [];
 
@@ -60,23 +64,20 @@ class UI {
 
         btns.forEach(button => {
             let id = button.dataset.id;
-            console.log(id);
-            
             let inCart = cart.find(item => item.id === id);
             
-            
             if(inCart) {
-
-                console.log(inCart.id);
-
-                
-                button.innerText == "In Cart";
+                button.innerText = "In Cart";
                 button.disabled = true;
+                button.style.background = 'var(--mainItemInCart)';
+                button.style.color = 'var(--mainWhite)';
             }
 
             button.addEventListener('click', (event) => {
                 event.target.innerText = "In Cart";
                 event.target.disabled = true;
+                button.style.background = 'var(--mainItemInCart)';
+                button.style.color = 'var(--mainWhite)';
 
                 // Get product from products in localStorage
                 let cartItem = {...Storage.getProduct(id), amount: 1};
@@ -96,6 +97,10 @@ class UI {
                 // Show the cart
                 this.showCart();
             });
+
+            // cartOverlay.addEventListener('click', () => {
+            //     this.hideCart();
+            // });
         });
     }
 
@@ -133,11 +138,16 @@ class UI {
     showCart(){
         cartOverlay.classList.add('transparentBcg');
         cartDOM.classList.add('showCart');
+        body.css('overflow', 'hidden');
+        body.css('margin-right', '15px');
     };
 
     hideCart() {
         cartOverlay.classList.remove('transparentBcg');
         cartDOM.classList.remove('showCart');
+        body.css('overflow', 'auto');
+        body.css('margin-right', '0');
+
     }
 
     setUpApp() {
@@ -167,9 +177,11 @@ class Storage {
 
     static saveCart(cart) {
         localStorage.setItem('cart', JSON.stringify(cart));
+        cartTitle.innerText = "your cart";
     }
 
     static getCart() {
+        cart.length == 0 ? cartTitle.innerText = "cart is empty" : "your cart";
         return localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
     }
 }

@@ -3,11 +3,13 @@
 :root {
   --primaryColor: #f09d51;
   --mainWhite: #fff;
+  --mainHoverCart: rgb(235, 235, 235);
   --mainBlack: #222;
   --mainGrey: #ececec;
   --mainSpacing: 0.1rem;
   --mainTransition: all 0.3s linear;
   --mainBgNavBar: #b36925de;
+  --mainItemInCart: #eb5f5f;
 }
 
 * {
@@ -61,8 +63,8 @@ body {
   cursor: pointer;
 }
 
-.bag-btn:hover .fa-shopping-cart {
-  color: var(--mainWhite);
+.fa-shopping-cart:hover {
+  color: var(--mainHoverCart);
   transition: var(--mainTransition);
 }
 
@@ -160,6 +162,7 @@ body {
 }
 .fa-shopping-cart {
   margin-right: 0.5rem;
+  color: var(--mainWhite);
 }
 .img-container:hover .bag-btn {
   transform: translateX(0);
@@ -245,7 +248,7 @@ body {
   align-items: center;
   grid-template-columns: auto 1fr auto;
   grid-column-gap: 1.5rem;
-  margin: 1.5rem 0;
+  margin: 1.5rem 1.5rem 1.5rem 0;
 }
 .cart-item img {
   width: 75px;
