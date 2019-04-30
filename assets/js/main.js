@@ -9,7 +9,6 @@ const cartTotal = document.querySelector('.cart-total');
 const cartContent = document.querySelector('.cart-content');
 const productsDOM = document.querySelector('.products-center');
 const cartTitle = document.querySelector('.cart-title');
-console.log(cartTitle);
 
 
 const body = $(document.body);
@@ -40,7 +39,6 @@ class Products {
 
 class UI {
     displayProducts(products) {
-        console.log(products);
         let result ='';
         products.forEach(product => {
             result += 
@@ -48,7 +46,7 @@ class UI {
                         <div class="img-container">
                             <img src=${product.image} alt=${product.title} class="product-img">
                             <button class="bag-btn" data-id=${product.id}>
-                                <i class="fas fa-shopping-cart"></i>add to bag
+                                <i class="fas fa-shopping-cart"></i>add to cart
                             </button>
                         </div>
                         <h3>${product.title}</h3>
@@ -95,7 +93,7 @@ class UI {
                 this.addCartItem(cartItem);
 
                 // Show the cart
-                this.showCart();
+                //this.showCart();
             });
 
             // cartOverlay.addEventListener('click', () => {
@@ -163,6 +161,41 @@ class UI {
             this.addCartItem(item);
         })
     }
+
+    cartLogic() {
+        //clear cart button
+        clearCartBtn.addEventListener('click', () => {
+            this.clearCart();
+        });
+
+        //cart functionality
+    }
+
+    clearCart() {
+        let cartItems = cart.map(item => item.id);
+        cartItems.forEach(id => this.removeItem(id));
+        
+        while(cartContent.children.length > 0){
+            cartContent.removeChild(cartContent.children[0]);
+        }
+
+        this.hideCart();
+    }
+
+    removeItem(id) {
+        cart = cart.filter(item => item.id !== id);
+        this.setCartValues(cart);
+        Storage.saveCart(cart);
+        let button = this.getSingleButton(id);
+        button.disabled = false;
+        button.innerHTML = `<i class="fas fa-shopping-cart"></i>add to cart`
+        button.style.background = 'var(--primaryColor)';
+        button.style.color = 'var(--mainBlack)';
+    }
+
+    getSingleButton(id) {
+        return buttonsDOM.find(button => button.dataset.id === id);
+    }
 }
 
 class Storage {
@@ -197,5 +230,8 @@ document.addEventListener("DOMContentLoaded", () => {
     products.getProducts().then(products => {
         ui.displayProducts(products);
         Storage.saveProducts(products);
-    }).then(() => { ui.getBagButtons(); });
+    }).then(() => { 
+        ui.getBagButtons(); 
+        ui.cartLogic();
+    });
 });
