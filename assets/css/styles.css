@@ -3,10 +3,14 @@
 :root {
   --primaryColor: #f09d51;
   --mainWhite: #fff;
+  --mainHoverCart: rgb(235, 235, 235);
   --mainBlack: #222;
   --mainGrey: #ececec;
   --mainSpacing: 0.1rem;
   --mainTransition: all 0.3s linear;
+  --mainBadge: #7cae17;
+  --mainBgNavBar: #343a40;
+  --mainItemInCart: #eb5f5f;
 }
 
 * {
@@ -24,18 +28,23 @@ body {
 .navbar-dark {
   position: sticky;
   top: 0;
-  z-index: 9999;
+  z-index: 1;
+  padding: 5px 55px;
+}
+
+.bg-dark {
+  background-color: var(--mainBgNavBar) !important;
 }
 
 .navbar-brand img{
-    width: 9%;
+    width: 12%;
     background-color: var(--mainWhite);
-    border: 1px solid var(--primaryColor);
+    border: 1px solid var(--mainWhite);
     border-radius: 50%;
 }
 
 .nav-icon {
-  font-size: 1.5rem;
+  font-size: 2.1rem;
 }
 .cart-btn {
   position: relative;
@@ -52,35 +61,53 @@ body {
 } */
 
 .fa-shopping-cart {
+  cursor: pointer;
   color: var(--mainWhite);
+  margin-right: 0.5rem;
+  transition: var(--mainTransition);
+}
+
+.fa-cart-arrow-down {
+  margin-left: 0.5rem;
+}
+
+.bag-btn:hover .fa-shopping-cart {
+  color: var(--mainHoverCart);
 }
 
 .badge-light {
   color: var(--mainWhite);
-  background-color: var(--primaryColor) !important;
+  /* background-color: var(--mainWhite) !important; */
+  background-color: transparent;
+  border: 1px solid var(--mainWhite);
   position: absolute;
-  right: -8px;
-  top: -8px;
+  right: -15px;
+  top: -16px;
   margin-top: 6px;
   border-radius: 50%;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: bold;
+  width: auto;
+  height: auto;
 }
-
 
 /* --------------- Hero ---------------- */
 .hero {
   min-height: calc(100vh - 60px);
-  background: url('../../assets/images/hero-bcg.jpeg') center/cover no-repeat;
+  background: url('../../assets/images/hero-bcg.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
 }
 .banner {
   text-align: center;
-  background: rgba(255, 255, 255, 0.8);
+  /* background: rgba(255, 255, 255, 0.8); */
+  background: rgba(255, 255, 255, 0.23);
   display: inline-block;
   padding: 2rem;
+  left: 15px;
+  position: relative;
+  top: -230px;
 }
 .banner-title {
   font-size: 3.4rem;
@@ -93,15 +120,17 @@ body {
   text-transform: uppercase;
   letter-spacing: var(--mainSpacing);
   font-size: 1rem;
-  background: var(--primaryColor);
-  color: var(--mainBlack);
-  border: 1px solid var(--primaryColor);
+  background: var(--mainBgNavBar);
+  color: var(--mainWhite);
+  border: 1px solid var(--mainWhite);
   transition: var(--mainTransition);
   cursor: pointer;
+  outline: none;
 }
 .banner-btn:hover {
   background: transparent;
-  color: var(--primaryColor);
+  color: var(--mainBgNavBar);
+  border: 1px solid var(--mainBgNavBar);
 }
 /* --------------- End of Hero ---------------- */
 
@@ -134,7 +163,7 @@ body {
   position: absolute;
   top: 70%;
   right: 0;
-  background: var(--primaryColor);
+  background: var(--mainBadge);
   border: none;
   text-transform: uppercase;
   padding: 0.5rem 0.75rem;
@@ -143,13 +172,13 @@ body {
   transition: var(--mainTransition);
   transform: translateX(101%);
   cursor: pointer;
+  color: var(--mainWhite);
+  min-width: 173.98px;
 }
 .bag-btn:hover {
   color: var(--mainWhite);
 }
-.fa-shopping-cart {
-  margin-right: 0.5rem;
-}
+
 .img-container:hover .bag-btn {
   transform: translateX(0);
 }
@@ -187,7 +216,7 @@ body {
   width: 100%;
   height: 100%;
   transition: var(--mainTransition);
-  background: rgb(240, 157, 81, 0.5);
+  background: rgba(0, 0, 0, 0.61);
   z-index: 2;
   visibility: hidden;
 }
@@ -228,13 +257,23 @@ body {
   letter-spacing: var(--mainSpacing);
   margin-bottom: 2rem;
 }
+
+.cart-content {
+  max-height: 70%;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+/* .cart-btn img {
+  width: 50px;
+} */
 /*---------- Cart Item -------------------- */
 .cart-item {
   display: grid;
   align-items: center;
   grid-template-columns: auto 1fr auto;
   grid-column-gap: 1.5rem;
-  margin: 1.5rem 0;
+  margin: 1.5rem 1.5rem 1.5rem 0;
 }
 .cart-item img {
   width: 75px;
@@ -259,7 +298,7 @@ body {
 }
 .fa-chevron-up,
 .fa-chevron-down {
-  color: var(--primaryColor);
+  color: var(--mainBgNavBar);
   cursor: pointer;
 }
 /*---------- End of Cart Item -------------------- */
@@ -268,6 +307,8 @@ body {
   margin-top: 2rem;
   letter-spacing: var(--mainSpacing);
   text-align: center;
+  bottom: 0;
+  position: sticky;
 }
 .cart-footer h3 {
   text-transform: capitalize;
@@ -275,3 +316,9 @@ body {
 }
 
 /* --------------- End of Cart ---------------- */
+
+@media (min-width: 0px) and (max-width: 991px) {
+  .navbar-brand {
+    display: none;
+  }
+}

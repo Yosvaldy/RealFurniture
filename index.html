@@ -21,18 +21,15 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">
-        <img src="assets/images/logo.png" alt="Real Furniture Logo"> Real Furniture 
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <a class="navbar-brand" href="#"><img src="assets/images/logo.jpg" alt="Real Furniture Logo"> Real Furniture</a>
+      <button class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
@@ -76,9 +73,10 @@
 
         <div class="cart-btn">
           <span class="nav-icon">
-            <i class="fas fa-shopping-cart"></i>
+            <!-- <i class="fas fa-shopping-cart"></i> -->
+            <img src="assets/images/cart2.png">
           </span>
-          <span class="badge badge-light">4</span>
+          <span class="badge badge-light cart-items">0</span>
           <!-- <div class="cart-items">0</div> -->
         </div>
       </div>
@@ -100,101 +98,7 @@
       </div>
 
       <div class="products-center">
-        <article class="product">
-          <div class="img-container">
-            <img src="assets/images/product-1.jpeg" alt="Product" class="product-img">
-            <button class="bag-btn" data-id="1">
-              <i class="fas fa-shopping-cart"></i>
-              add to bag
-            </button>
-          </div>
-          <h3>queen bed</h3>
-          <h4>$625.00</h4>
-        </article>
-
-        <article class="product">
-            <div class="img-container">
-              <img src="assets/images/product-2.jpeg" alt="Product" class="product-img">
-              <button class="bag-btn" data-id="2">
-                <i class="fas fa-shopping-cart"></i>
-                add to bag
-              </button>
-            </div>
-            <h3>queen bed</h3>
-            <h4>$625.00</h4>
-          </article>
-
-          <article class="product">
-              <div class="img-container">
-                <img src="assets/images/product-3.jpeg" alt="Product" class="product-img">
-                <button class="bag-btn" data-id="3">
-                  <i class="fas fa-shopping-cart"></i>
-                  add to bag
-                </button>
-              </div>
-              <h3>queen bed</h3>
-              <h4>$625.00</h4>
-            </article>
-
-            <article class="product">
-                <div class="img-container">
-                  <img src="assets/images/product-4.jpeg" alt="Product" class="product-img">
-                  <button class="bag-btn" data-id="4">
-                    <i class="fas fa-shopping-cart"></i>
-                    add to bag
-                  </button>
-                </div>
-                <h3>queen bed</h3>
-                <h4>$625.00</h4>
-              </article>
-
-              <article class="product">
-                <div class="img-container">
-                  <img src="assets/images/product-4.jpeg" alt="Product" class="product-img">
-                  <button class="bag-btn" data-id="4">
-                    <i class="fas fa-shopping-cart"></i>
-                    add to bag
-                  </button>
-                </div>
-                <h3>queen bed</h3>
-                <h4>$625.00</h4>
-              </article>
-
-              <article class="product">
-                <div class="img-container">
-                  <img src="assets/images/product-4.jpeg" alt="Product" class="product-img">
-                  <button class="bag-btn" data-id="4">
-                    <i class="fas fa-shopping-cart"></i>
-                    add to bag
-                  </button>
-                </div>
-                <h3>queen bed</h3>
-                <h4>$625.00</h4>
-              </article>
-
-              <article class="product">
-                <div class="img-container">
-                  <img src="assets/images/product-4.jpeg" alt="Product" class="product-img">
-                  <button class="bag-btn" data-id="4">
-                    <i class="fas fa-shopping-cart"></i>
-                    add to bag
-                  </button>
-                </div>
-                <h3>queen bed</h3>
-                <h4>$625.00</h4>
-              </article>
-
-              <article class="product">
-                <div class="img-container">
-                  <img src="assets/images/product-4.jpeg" alt="Product" class="product-img">
-                  <button class="bag-btn" data-id="4">
-                    <i class="fas fa-shopping-cart"></i>
-                    add to bag
-                  </button>
-                </div>
-                <h3>queen bed</h3>
-                <h4>$625.00</h4>
-              </article>
+        <!-- <article> Here goes article section implemented on main.js</article> -->
       </div>
     </section>
     <!-- End Products Section -->
@@ -205,107 +109,27 @@
         <span class="close-cart">
           <i class="fas fa-window-close"></i>
         </span>
-        <h2>your cart</h2>
+        <h2 class="cart-title">your cart</h2>
         <div class="cart-content">
-          <!-- cart items -->
-          <div class="cart-item">
-            <img src="assets/images/product-1.jpeg" alt="product">
-            <div>
-              <h4>queen bed</h4>
-              <h5>$625.00</h5>
-              <span class="remove-item">remove</span>
-            </div>
-            <div>
-              <i class="fas fa-chevron-up"></i>
-              <p class="item-amount">2</p>
-              <i class="fas fa-chevron-down"></i>
-            </div>
-          </div>
-
-          <div class="cart-item">
-            <img src="assets/images/product-4.jpeg" alt="product">
-            <div>
-              <h4>queen bed</h4>
-              <h5>$625.00</h5>
-              <span class="remove-item">remove</span>
-            </div>
-            <div>
-              <i class="fas fa-chevron-up"></i>
-              <p class="item-amount">2</p>
-              <i class="fas fa-chevron-down"></i>
-            </div>
-          </div>
-
-          <div class="cart-item">
-            <img src="assets/images/product-2.jpeg" alt="product">
-            <div>
-              <h4>queen bed</h4>
-              <h5>$625.00</h5>
-              <span class="remove-item">remove</span>
-            </div>
-            <div>
-              <i class="fas fa-chevron-up"></i>
-              <p class="item-amount">2</p>
-              <i class="fas fa-chevron-down"></i>
-            </div>
-          </div>
-
-          <div class="cart-item">
-            <img src="assets/images/product-3.jpeg" alt="product">
-            <div>
-              <h4>queen bed</h4>
-              <h5>$625.00</h5>
-              <span class="remove-item">remove</span>
-            </div>
-            <div>
-              <i class="fas fa-chevron-up"></i>
-              <p class="item-amount">2</p>
-              <i class="fas fa-chevron-down"></i>
-            </div>
-          </div>
-
-          <div class="cart-item">
-            <img src="assets/images/product-8.jpeg" alt="product">
-            <div>
-              <h4>queen bed</h4>
-              <h5>$625.00</h5>
-              <span class="remove-item">remove</span>
-            </div>
-            <div>
-              <i class="fas fa-chevron-up"></i>
-              <p class="item-amount">2</p>
-              <i class="fas fa-chevron-down"></i>
-            </div>
-          </div>
-
-     
-          <!-- end cart items -->
+          <!-- cart items section -->
         </div>
         <div class="cart-footer">
           <h3>your total: $<span class="cart-total">1250.00</span></h3>
           <button class="clear-cart banner-btn">clear cart</button>
         </div>
       </div>
-
     </div>
     <!-- End Cart Section -->
 
-
-    <script
+    <!-- <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
+    ></script> -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>
