@@ -175,6 +175,15 @@ class UI {
         });
 
         //cart functionality
+        cartContent.addEventListener('click', (event) => {
+            if (event.target.classList.contains('remove-item')){
+                let itemToRemove = event.target;
+                let itemIdToRemove = itemToRemove.dataset.id;
+                this.removeItem(itemIdToRemove);
+                cartContent.removeChild(itemToRemove.parentElement.parentElement);                
+            }
+            
+        });
     }
 
     clearCart() {

@@ -77,14 +77,18 @@ body {
 
 .badge-light {
   color: var(--mainWhite);
-  background-color: var(--mainBadge) !important;
+  /* background-color: var(--mainWhite) !important; */
+  background-color: transparent;
+  border: 1px solid var(--mainWhite);
   position: absolute;
-  right: -10px;
-  top: -12px;
+  right: -15px;
+  top: -16px;
   margin-top: 6px;
   border-radius: 50%;
   font-size: 18px;
   font-weight: bold;
+  width: auto;
+  height: auto;
 }
 
 /* --------------- Hero ---------------- */
@@ -259,6 +263,10 @@ body {
   overflow: hidden;
   overflow-y: scroll;
 }
+
+/* .cart-btn img {
+  width: 50px;
+} */
 /*---------- Cart Item -------------------- */
 .cart-item {
   display: grid;
@@ -308,3 +316,9 @@ body {
 }
 
 /* --------------- End of Cart ---------------- */
+
+@media (min-width: 0px) and (max-width: 991px) {
+  .navbar-brand {
+    display: none;
+  }
+}
