@@ -67,6 +67,10 @@ body {
   transition: var(--mainTransition);
 }
 
+.fa-cart-arrow-down {
+  margin-left: 0.5rem;
+}
+
 .bag-btn:hover .fa-shopping-cart {
   color: var(--mainHoverCart);
 }
@@ -155,7 +159,7 @@ body {
   position: absolute;
   top: 70%;
   right: 0;
-  background: var(--primaryColor);
+  background: var(--mainBadge);
   border: none;
   text-transform: uppercase;
   padding: 0.5rem 0.75rem;
@@ -164,7 +168,8 @@ body {
   transition: var(--mainTransition);
   transform: translateX(101%);
   cursor: pointer;
-  color: var(--mainBlack);
+  color: var(--mainWhite);
+  min-width: 173.98px;
 }
 .bag-btn:hover {
   color: var(--mainWhite);

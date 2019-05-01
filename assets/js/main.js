@@ -10,7 +10,6 @@ const cartContent = document.querySelector('.cart-content');
 const productsDOM = document.querySelector('.products-center');
 const cartTitle = document.querySelector('.cart-title');
 
-
 const body = $(document.body);
 //cart
 let cart = [];
@@ -66,6 +65,9 @@ class UI {
             
             if(inCart) {
                 button.innerText = "In Cart";
+                var z = document.createElement('i');
+                z.className = 'fas fa-cart-arrow-down';
+                button.appendChild(z);
                 button.disabled = true;
                 button.style.background = 'var(--mainItemInCart)';
                 button.style.color = 'var(--mainWhite)';
@@ -74,6 +76,10 @@ class UI {
             button.addEventListener('click', (event) => {
                 event.target.innerText = "In Cart";
                 event.target.disabled = true;
+                var z = document.createElement('i');
+                z.className = 'fas fa-cart-arrow-down';
+                button.appendChild(z);
+
                 button.style.background = 'var(--mainItemInCart)';
                 button.style.color = 'var(--mainWhite)';
 
@@ -189,8 +195,8 @@ class UI {
         let button = this.getSingleButton(id);
         button.disabled = false;
         button.innerHTML = `<i class="fas fa-shopping-cart"></i>add to cart`
-        button.style.background = 'var(--primaryColor)';
-        button.style.color = 'var(--mainBlack)';
+        button.style.background = 'var(--mainBadge)';
+        button.style.color = 'var(--mainWhite)';
     }
 
     getSingleButton(id) {
@@ -234,4 +240,17 @@ document.addEventListener("DOMContentLoaded", () => {
         ui.getBagButtons(); 
         ui.cartLogic();
     });
+});
+
+$(document).ready(function () {
+    $('.banner-btn').click(function() {
+    $('html, body').animate({
+      scrollTop: $(".products").offset().top
+    }, 1000)
+  }),
+  $('.navbar-dark img').click(function (){
+    $('html, body').animate({
+      scrollTop: $(".hero").offset().top
+    }, 1000)
+  })
 });
