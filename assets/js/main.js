@@ -1,3 +1,12 @@
+//Contenful SetUp
+const client = contentful.createClient({
+    // This is the space ID. A space is like a project folder in Contentful terms
+    space: "7b1b6letsu5r",
+    // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
+    accessToken: "40937616f138b7d7fee1394815c444bc82bf877e65d1afca32f8f86bbc7c3855"
+  });
+
+
 //variables
 const cartBtn = document.querySelector('.cart-btn');
 const closeCartBtn = document.querySelector('.close-cart');
@@ -17,23 +26,45 @@ let cart = [];
 //buttons
 let buttonsDOM = [];
 
+// class Products { //To fetch from Json file
+//      async getProducts() {
+//          try {
+//             let result = await fetch('data.json');
+//             let data = await result.json();
+//             let products = data.items;
+//             products = products.map(item => {
+//                 const {title, price} = item.fields;
+//                 const {id} = item.sys;
+//                 const image = item.fields.image.fields.file.url;
+//                 return {title, price, id, image}
+//             })
+//             return products;
+//          } catch (error) {
+//              console.log(error);
+//          }
+//      }
+// }
+
 class Products {
-     async getProducts() {
-         try {
-            let result = await fetch('data.json');
-            let data = await result.json();
-            let products = data.items;
-            products = products.map(item => {
-                const {title, price} = item.fields;
-                const {id} = item.sys;
-                const image = item.fields.image.fields.file.url;
-                return {title, price, id, image}
-            })
-            return products;
-         } catch (error) {
-             console.log(error);
-         }
-     }
+    async getProducts() {
+        try {
+           let contenful = await client.getEntries({
+               content_type: 'realFurniture'
+           });
+           console.log(contenful);
+           
+           let products = contenful.items;
+           products = products.map(item => {
+               const {title, price} = item.fields;
+               const {id} = item.sys;
+               const image = item.fields.image.fields.file.url;
+               return {title, price, id, image}
+           })
+           return products;
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }
 
 class UI {
