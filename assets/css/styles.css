@@ -139,6 +139,35 @@ body {
   color: var(--mainBgNavBar);
   border: 1px solid var(--mainBgNavBar);
 }
+
+.checkout-items {
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  font-size: 1rem;
+  background: var(--mainItemInCart);
+  color: var(--mainWhite);
+  border: 1px solid var(--mainWhite);
+  transition: var(--mainTransition);
+  cursor: pointer;
+  outline: none;
+}
+
+.checkout-items:disabled {
+  background: var(--mainItemInCart);
+  color: var(--mainWhite);
+  opacity: .3;
+  transition: var(--mainTransition);
+  cursor: default;
+  outline: none;
+}
+
+.checkout-items:hover:not(:disabled) {
+  background: var(--mainItemInCart);
+  color: var(--mainBgNavBar);
+  border: 1px solid var(--mainBgNavBar);
+}
+
 /* --------------- End of Hero ---------------- */
 
 /* --------------- Products ---------------- */
