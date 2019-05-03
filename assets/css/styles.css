@@ -30,14 +30,21 @@ body {
   top: 0;
   z-index: 1;
   padding: 5px 55px;
+  min-height: 120px;
 }
 
 .bg-dark {
   background-color: var(--mainBgNavBar) !important;
 }
 
+.navbar-brand {
+    max-width: 250px;
+    height: 90px;
+    width: min-content;
+}
+
 .navbar-brand img{
-    width: 12%;
+    width: 60%;
     background-color: var(--mainWhite);
     border: 1px solid var(--mainWhite);
     border-radius: 50%;
@@ -132,6 +139,35 @@ body {
   color: var(--mainBgNavBar);
   border: 1px solid var(--mainBgNavBar);
 }
+
+.checkout-items {
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  font-size: 1rem;
+  background: var(--mainItemInCart);
+  color: var(--mainWhite);
+  border: 1px solid var(--mainWhite);
+  transition: var(--mainTransition);
+  cursor: pointer;
+  outline: none;
+}
+
+.checkout-items:disabled {
+  background: var(--mainItemInCart);
+  color: var(--mainWhite);
+  opacity: .3;
+  transition: var(--mainTransition);
+  cursor: default;
+  outline: none;
+}
+
+.checkout-items:hover:not(:disabled) {
+  background: var(--mainItemInCart);
+  color: var(--mainBgNavBar);
+  border: 1px solid var(--mainBgNavBar);
+}
+
 /* --------------- End of Hero ---------------- */
 
 /* --------------- Products ---------------- */
@@ -317,8 +353,81 @@ body {
 
 /* --------------- End of Cart ---------------- */
 
-@media (min-width: 0px) and (max-width: 991px) {
-  .navbar-brand {
-    display: none;
+footer {
+  position: inherit;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: var(--mainBgNavBar);
+  color: var(--mainWhite);
+  text-align: center;
+}
+
+
+/*iPhone 5 Screen Size*/
+@media (min-width: 0px) and (max-width: 320px) {
+
+}
+
+/*iPhone 6/7/8 Screen Size*/
+@media (min-width: 321px) and (max-width: 375px) {
+
+}
+
+/*iPhone 6/7/8 PLUS Screen Size*/
+@media (min-width: 376px) and (max-width: 414px) {
+
+}
+
+/*iPad Screen Size*/
+@media (min-width: 415px) and (max-width: 767px) {
+
+}
+
+/*iPad Pro Screen Size*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+}
+
+/*Desktop Screen Size (even 4K resolution)*/
+@media (min-width: 1025px) and (max-width: 4096px) {
+
+}
+
+@media (min-width: 320px) and (max-width: 776px) {
+  .hero {
+    min-height: calc(100vh - 60px);
+    background: url('../../assets/images/hero-bcg-mobile.jpg') center/cover no-repeat !important;
+    display: flex;
+    align-items: center;
+  }
+
+  .banner {
+    background: none;
+    padding: 0;
+    left: 0;
+    top: -220px;
+  }
+
+  .banner-title {
+    margin-bottom: .5rem;
+  }
+
+  .cart {
+    right: 0;
+  }
+
+  .products-center {
+    width: auto;
+    max-width: 100%;
+  }
+
+  .products {
+    padding: 4rem 1rem;
+  }
+
+  .navbar-dark {
+    padding: 5px 25px;
   }
 }

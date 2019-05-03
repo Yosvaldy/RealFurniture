@@ -18,6 +18,7 @@ const cartTotal = document.querySelector('.cart-total');
 const cartContent = document.querySelector('.cart-content');
 const productsDOM = document.querySelector('.products-center');
 const cartTitle = document.querySelector('.cart-title');
+const checkoutBtn = document.querySelector('.checkout-items');
 
 const body = $(document.body);
 //cart
@@ -51,7 +52,6 @@ class Products {
            let contenful = await client.getEntries({
                content_type: 'realFurniture'
            });
-           console.log(contenful);
            
            let products = contenful.items;
            products = products.map(item => {
@@ -175,14 +175,14 @@ class UI {
         cartDOM.classList.add('showCart');
         body.css('overflow', 'hidden');
         body.css('margin-right', '15px');
-    };
+        cart.length === 0 ? checkoutBtn.disabled = true : checkoutBtn.disabled = false;
+    }
 
     hideCart() {
         cartOverlay.classList.remove('transparentBcg');
         cartDOM.classList.remove('showCart');
         body.css('overflow', 'auto');
         body.css('margin-right', '0');
-
     }
 
     setUpApp() {
@@ -318,3 +318,7 @@ $(document).ready(function () {
     }, 1000)
   })
 });
+
+// $(function(){
+//     $("#render-content").load("/assets/views/checkout.html");
+// });
